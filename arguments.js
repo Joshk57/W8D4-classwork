@@ -278,7 +278,12 @@ function sumThree(num1, num2, num3) {
 //   };
 
 
-
+Function.prototype.inherits = function(Parent) {
+  function Surrogate() {}
+  Surrogate.prototype = Parent.prototype;
+  this.prototype = new Surrogate();
+  this.prototype.constructor = this;
+};
 
 
 
